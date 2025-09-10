@@ -31,9 +31,16 @@ switch (Salami)
         int Hours = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Введите минуты:");
         int Minutes = Convert.ToInt32(Console.ReadLine());
-        int ResClock = Hours * 60 + Minutes;
-        Console.WriteLine(Hours + ":" + Minutes);
-        Console.WriteLine("Осталось в минутах: " + ResClock);
+        Console.WriteLine("Введите T (Время на доставочку в минутках):");
+        int T = Convert.ToInt32(Console.ReadLine());
+        int totalMinutes = Hours * 60 + Minutes;
+        totalMinutes += T;
+        totalMinutes %= 1440;
+        int hours = totalMinutes / 60;
+        int minutes = totalMinutes % 60;
+        string fHours = hours.ToString("00");
+        string fMinutes = minutes.ToString("00");
+        Console.WriteLine($"{fHours}:{fMinutes}");
         break;
     default:
         Console.WriteLine("Неверный ID!\nДоступные задания:\n[1] Перевод из системы в систему\n[2] Часики");
