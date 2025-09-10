@@ -9,7 +9,7 @@ switch (Salami)
         string change = Console.ReadLine();
         if (change == "1")
         {
-            Console.WriteLine("Введите двоичиное число для перевода:");
+            Console.WriteLine("Введите двоичное число для перевода:");
             string NumberA = Console.ReadLine();
             int Res = Convert.ToInt32(NumberA, 2);
             Console.WriteLine("Ваш результат: " + Res);
